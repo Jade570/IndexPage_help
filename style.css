@@ -1,0 +1,196 @@
+/*폰트 임베드*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;700&display=swap');
+html, body {
+	margin: 0;
+	padding: 0;
+	height:100%;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/*************************/
+/*    상단 네비게이션 바    */
+/*************************/ 
+
+/* 네비게이션 바 전반 설정*/
+.navbar {
+overflow: hidden;
+background-color: #333; /*배경 색깔 hex로 #rrggbb 적으시면 됩니다*/
+position: fixed; 
+top: 0;
+width: 100%;
+z-index: 2;
+}
+
+/* 네비게이션 바 안의 링크 */
+.navbar a {
+float: left;
+display: block;
+color: #f2f2f2; /*폰트 색깔 hex로 #rrggbb 적으시면 됩니다*/
+text-align: center;
+padding: 14px 16px;
+text-decoration: none; /*링크에 밑줄 안생기게 하는 코드*/
+}
+
+/* 네비게이션 바 안의 링크 버튼 위로 마우스 가져갈 때*/
+.navbar a:hover {
+background: #ddd; /*배경 색깔 hex로 #rrggbb 적으시면 됩니다*/
+color: black; /*폰트 색깔 hex로 #rrggbb 적으시면 됩니다*/
+}
+
+/**************************/
+/*     횡 스크롤 카드들     */
+/**************************/
+
+
+/*횡스크롤 전반 설정*/
+.scrolling-wrapper {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	width: 7000px;
+	height:100%;
+	z-index: 1;
+	position: absolute;
+}
+
+/*라인 설정*/
+.draw{
+	z-index:0;
+	background-color: transparent;
+}
+
+line{
+	stroke:purple; /*라인 색깔 hex로 #rrggbb 적으시면 됩니다*/
+	stroke-width: 10px; /*라인 두께 적으시면 됩니다*/
+}
+
+/*카드 설정*/
+.scrolling-wrapper .card {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	display: inline-block;
+	height: 100%;
+	width: 996px;
+	/*background-color: aqua*/ /*카드 하나 당 크기를 보고 싶을 때 주석 지워서 확인 해 보세요*/
+}
+
+/*글 상자 설정*/
+/*썸네일이 들어간 카드를 제외한 카드들 (1,2번째 카드)
+* 에 꽉 차게끔 글 상자를 넣어 놨습니다.
+*/
+.article-box{
+	white-space: normal;
+	height: 100%; /*글 상자의 세로 비율 적으시면 됩니다 (px로 절대값 설정도 됩니다)*/
+	width: 50%; /*글 상자의 가로 비율 적으시면 됩니다 (px로 절대값 설정도 됩니다)*/
+	margin: 40px; /*마진 두께 적으시면 됩니다*/
+	padding: 30px; /*패딩 두께 적으시면 됩니다*/
+}
+
+/*썸네일 전반 설정*/
+.thumbnail {
+	width: 400px; /* 크기 조절*/
+    height: 400px; /* 크기 조절*/
+    overflow: hidden;
+    border-radius: 50%;
+	object-fit: cover;
+}
+
+/*설명 원 전반 설정*/
+.dot {
+	overflow: hidden;
+	white-space: normal;
+	vertical-align: middle;
+	text-align: center;
+	height: 200px; /*크기 조절*/
+	width: 200px; /*크기 조절*/
+	background-color: #fff; /*배경 색깔 hex로 #rrggbb 적으시면 됩니다*/
+	border-radius: 50%;
+	border-style: solid;
+	display: inline-block;
+}
+
+/*******************/
+/*   각 카드별 설정  */
+/*******************/
+
+#설명{
+	float: left; /*글 상자의 정렬을 어떻게 할지 결정합니다:left, right, none*/
+}
+#설명> h1{ /*제목*/
+	text-align: left; /*제목 정렬을 어떻게 할지 결정합니다: left, right, center(중앙정렬), justify(양쪽정렬)*/
+}
+#설명> p{ /*내용*/
+	text-align: center; /*글 문단 정렬을 어떻게 할지 결정합니다: left, right, center(중앙정렬), justify(양쪽정렬)*/
+}
+
+#링크모음{
+	float: right; /*글 상자의 정렬을 어떻게 할지 결정합니다:left, right, none*/
+}
+#링크모음 h1{ /*제목*/
+	text-align: left; /*제목 정렬을 어떻게 할지 결정합니다: left, right, center(중앙정렬), justify(양쪽정렬)*/
+}
+#링크모음 h2{ /*소제목*/
+	text-align: center; /*제목 정렬을 어떻게 할지 결정합니다: left, right, center(중앙정렬), justify(양쪽정렬)*/
+}
+#링크모음 p{ /*내용*/
+	text-align: justify; /*글 문단 정렬을 어떻게 할지 결정합니다: left, right, center(중앙정렬), justify(양쪽정렬)*/
+}
+#링크모음 a{
+	color: teal;  /*링크모음 카드의 링크 색을 어떻게 할지 결정합니다*/
+	text-decoration: none; /*링크 밑줄 없애는 코드*/
+}
+#링크모음 a:hover{ /*링크에 마우스를 갖다 댔을 때*/
+	color: red;  /*링크모음 카드의 링크 색을 어떻게 할지 결정합니다*/
+	text-decoration: none; /*링크 밑줄 없애는 코드*/
+}
+
+#용기 {
+	position: relative;
+	top: 300px;		
+}
+#용기> .dot{
+	position: relative;
+	right: 150px;
+	top: -50px;
+}
+
+#분노 {
+	position: relative;
+	top: 100px;		
+}
+#분노> .dot{
+	position: relative;
+	right: 300px;
+	top: 0px;
+}
+
+#체념 {
+	position: relative;
+	left:200px;
+	top: 300px;		
+}
+#체념> .dot{
+	position: relative;
+	right: 450px;
+	top: -50px;
+}
+
+#포기 {
+	position: relative;
+	left: 150px;
+	top: 450px;		
+}
+#포기> .dot{
+	position: relative;
+	right: 300px;
+	top: -400px;
+}
+
+#마지막{
+	float: right; /*글 상자의 정렬을 어떻게 할지 결정합니다:left, right, none*/
+}
+#마지막> h1{ /*제목*/
+	text-align: left; /*제목 정렬을 어떻게 할지 결정합니다: left, right, center(중앙정렬), justify(양쪽정렬)*/
+}
+#마지막> p{ /*내용*/
+	text-align: justify; /*글 문단 정렬을 어떻게 할지 결정합니다: left, right, center(중앙정렬), justify(양쪽정렬)*/
+}
